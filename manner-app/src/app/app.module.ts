@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TopComponent } from './pages/top/top.component';
 import { ButtonComponent } from './components/button/button.component';
 import { QuestionComponent } from './pages/question/question.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { QuestionComponent } from './pages/question/question.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
