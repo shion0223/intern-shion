@@ -1,0 +1,12 @@
+@import '../../../styles/color';
+
+.questionNumber{
+    text-align: center;
+    color: $text;
+}
+.questionSentence{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text;
+}
