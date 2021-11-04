@@ -2,11 +2,7 @@
     <div>Q1</div>
 </h1> 
 <div class="questionSentence">
-    <span>メールで連絡が来た際</span>
-    <span>返信する時間帯はいつでしょう</span>
+    <span *ngFor="let question of quizData.questions">{{question}}</span>
 </div>
 
-<button  mat-raised-button color = 'primary'>1</button>
-<button  mat-raised-button color = 'primary'>2</button>
-<button  mat-raised-button color = 'primary'>3</button>
-<button  mat-raised-button color = 'primary'>4</button>
+<button *ngFor="let choice of quizData.choices" mat-raised-button color = 'primary'>{{choice.statement}}</button>
