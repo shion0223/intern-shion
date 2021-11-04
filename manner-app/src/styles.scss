@@ -3,7 +3,7 @@
 @include mat.core();
 
 $my-primary: mat.define-palette(mat.$light-blue-palette, 500);
-$my-accent: mat.define-palette(mat.$grey-palette, 300);
+$my-accent: mat.define-palette(mat.$grey-palette, 50);
 
 $my-theme: mat.define-light-theme(
   (
@@ -15,7 +15,6 @@ $my-theme: mat.define-light-theme(
 );
 
 @include mat.button-theme($my-theme);
-@include mat.toolbar-theme($my-theme);
 
 /* You can add global styles to this file, and also import other style files */
 html,
