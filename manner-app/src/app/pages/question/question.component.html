@@ -4,5 +4,6 @@
 <div class="questionSentence">
     <span *ngFor="let question of quizData.questions">{{question}}</span>
 </div>
+<p>{{quizData!.questions}}</p>
 
-<button *ngFor="let choice of quizData.choices" mat-raised-button color = 'primary'>{{choice.statement}}</button>
+<button *ngFor="let choice of quizData.choices" mat-raised-button color = 'primary' (click)="chooseAnswer(choice)">{{choice.statement}}</button>
