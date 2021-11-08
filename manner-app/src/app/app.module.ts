@@ -9,6 +9,8 @@ import { QuestionComponent } from './pages/question/question.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
+import { AnswerComponent } from './pages/answer/answer.component';
+import { ResultComponent } from './pages/result/result.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     TopComponent,
     ButtonComponent,
-    QuestionComponent
+    QuestionComponent,
+    AnswerComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
