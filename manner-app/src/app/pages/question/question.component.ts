@@ -32,7 +32,7 @@ export class QuestionComponent implements OnInit {
   chooseAnswer(choice: Choice) {
     this.quizService.checkAnswer(choice);
 
-    this.quizService.nextPage();
+    this.router.navigate(['answer']);
 
   }
 
