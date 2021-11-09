@@ -8,6 +8,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 })
 export class AnswerComponent implements OnInit {
 
+
   constructor(
     public quizService:QuizService
   ) { }

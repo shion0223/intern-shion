@@ -1,10 +1,12 @@
+@import '../../../styles/color';
 .answerIcon{
     display: flex;
     flex-direction: column;
     align-items: center;
     position:relative;
     // height: 0px;
-    top: 100px;
+    top: 30px;
+    color: $text;
 }
 
 .correctAnswer{
@@ -21,9 +23,14 @@
     line-height: 80px;
     border-radius: 50%;
     border: solid 10px #ff0000;
-    }
+}
 
-
+.box{
+    display: inline-table;
+	width: 50px;
+	height: 110px;
+	position: relative;
+}
 
 .incorrectAnswer{
     display: inline-block;
@@ -35,7 +42,7 @@
     background: currentColor;
     border-radius: 0.1em;
     position: relative;
-    top: 50px;
+    top: 40px;
     transform: rotate(45deg);
   }
   
@@ -49,4 +56,22 @@
     background: inherit;
     border-radius: inherit;
     transform: rotate(90deg);
+  }
+
+  .outerFrame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+    width: 325px;
+    border-top:1px solid #094067;
+    border-bottom:1px solid #094067;
+    color: $text;
+  }
+  .center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 50px;
   }
