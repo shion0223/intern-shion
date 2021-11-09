@@ -58,7 +58,7 @@ export const QUIZ_DATA: Quiz[] = [
             isAnswer: false
           }
         ],
-        explanation: '説明文'
+        explanation: '説明文2'
       },
       {
         questions: [
@@ -82,6 +82,6 @@ export const QUIZ_DATA: Quiz[] = [
             isAnswer: false
           }
         ],
-        explanation: '説明文'
+        explanation: '説明文3'
       },
 ];

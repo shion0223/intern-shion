@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-answer',
   templateUrl: './answer.component.html',
@@ -8,12 +10,17 @@ import { QuizService } from 'src/app/services/quiz.service';
 })
 export class AnswerComponent implements OnInit {
 
-
   constructor(
-    public quizService:QuizService
+    public quizService:QuizService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    
+  }
+
+  nextPage() {
+    this.quizService.nextPage()
   }
 
 }

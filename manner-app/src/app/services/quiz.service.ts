@@ -40,7 +40,7 @@ export class QuizService {
   }
 
   getQuiz(): Quiz {
-    this.quiz = this.quizzes[this.questionCount - 1];
+    this.quiz = this.quizzes[this.questionCount - 1]; //quizにクイズのデータを入れる
     return this.quizzes[this.questionCount - 1];
     // return QUIZ_DATA[0];
   }
@@ -54,7 +54,7 @@ export class QuizService {
 
   nextPage(): void {
     if (this.questionCount <= QUIZ_COUNT) {
-      this.router.navigate(['answer']);
+      this.router.navigate(['question']);
     } else {
       this.router.navigate(['result']);
     }

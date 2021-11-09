@@ -44,9 +44,9 @@
     position: relative;
     top: 40px;
     transform: rotate(45deg);
-  }
+}
   
-  .incorrectAnswer::before {
+.incorrectAnswer::before {
     content: '';
     position: absolute;
     top: 0;
@@ -56,9 +56,9 @@
     background: inherit;
     border-radius: inherit;
     transform: rotate(90deg);
-  }
+}
 
-  .outerFrame{
+.outerFrame{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,11 +67,27 @@
     border-top:1px solid #094067;
     border-bottom:1px solid #094067;
     color: $text;
-  }
-  .center{
+}
+
+.center{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     top: 50px;
-  }
+}
+
+.outer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 100px;
+}
+
+.nextButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 325px;
+}
