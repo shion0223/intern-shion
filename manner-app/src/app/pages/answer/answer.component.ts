@@ -22,5 +22,8 @@ export class AnswerComponent implements OnInit {
   nextPage() {
     this.quizService.nextPage()
   }
+  resultPage(){
+    this.router.navigate(['result'])
+  }
 
 }
