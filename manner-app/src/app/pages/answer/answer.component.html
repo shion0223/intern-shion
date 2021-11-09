@@ -11,9 +11,17 @@
         <div>
             <h1>不正解</h1>
         </div>
-        <div>
-            <span class="incorrectAnswer"></span>
+        <div class="box">
+            <div class="incorrectAnswer"></div>
         </div>
     </div>
 </ng-template>
-{{quizService.quiz.explanation}}
+<div class="center">
+    <div class="outerFrame">
+        <p>豆知識</p>
+    </div>
+
+    {{quizService.quiz.explanation}}
+
+</div>
+
