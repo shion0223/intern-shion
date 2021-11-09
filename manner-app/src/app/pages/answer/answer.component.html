@@ -1,1 +1,18 @@
-{{quizService.selectedChoice.isAnswer}}
+<div *ngIf='quizService.selectedChoice.isAnswer; else Statement' class="answerIcon">
+    <div>
+        <h1>正解</h1>
+    </div>
+    <div>
+        <span class="circleLine"></span>
+    </div>
+</div>
+<ng-template #Statement>
+    <div class="answerIcon">
+        <div>
+            <h1>不正解</h1>
+        </div>
+        <div>
+            <span class="incorrectAnswer"></span>
+        </div>
+    </div>
+</ng-template>
