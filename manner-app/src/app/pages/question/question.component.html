@@ -7,3 +7,4 @@
 <p>{{quizData!.questions}}</p>
 
 <button *ngFor="let choice of quizData.choices" mat-raised-button color = 'primary' (click)="chooseAnswer(choice)">{{choice.statement}}</button>
+

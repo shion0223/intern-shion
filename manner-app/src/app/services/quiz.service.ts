@@ -5,6 +5,7 @@ import { Choice, Quiz, QUIZ_DATA } from '../const/quiz';
 import * as _ from 'lodash-es'; // https://www.npmjs.com/package/lodash-es
 
 
+
 const QUIZ_COUNT = 2;
 
 @Injectable({
@@ -16,6 +17,8 @@ export class QuizService {
   selectedChoice!: Choice ;
   quizzes: any;
   isQuizzing: boolean = false;
+  quiz!: Quiz;
+
 
   constructor(
     private router: Router
@@ -37,6 +40,7 @@ export class QuizService {
   }
 
   getQuiz(): Quiz {
+    this.quiz = this.quizzes[this.questionCount - 1];
     return this.quizzes[this.questionCount - 1];
     // return QUIZ_DATA[0];
   }
