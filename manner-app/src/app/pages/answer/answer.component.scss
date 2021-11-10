@@ -69,6 +69,15 @@
     color: $text;
 }
 
+.explanation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+    width: 325px;
+    color: $text;
+}
+
 .center{
     display: flex;
     flex-direction: column;

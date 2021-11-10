@@ -6,7 +6,7 @@ import * as _ from 'lodash-es'; // https://www.npmjs.com/package/lodash-es
 
 
 
-const QUIZ_COUNT = 2;
+const QUIZ_COUNT = 3;
 
 @Injectable({
   providedIn: 'root'
