@@ -6,13 +6,19 @@ import { QuizService } from 'src/app/services/quiz.service'
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
+  correctAnswerRate: number = 0;
+  answerCount: number = 0;
+  questionCount: number = 0;
 
   constructor(
     public quizService:QuizService
   ) { }
 
   ngOnInit(): void {
-    this.quizService.findCorrectAnswerRate(); //result画面が開かれた時にfindCorrectAnswerRate関数が実行される
+    this.correctAnswerRate = this.quizService.findCorrectAnswerRate(); //result画面が開かれた時にfindCorrectAnswerRate関数が実行される
+    this.answerCount = this.quizService.answerCount
+    this.questionCount = this.quizService.questionCount
+
   }
 
 }
