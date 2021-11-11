@@ -12,13 +12,13 @@ const QUIZ_COUNT = 3;
   providedIn: 'root'
 })
 export class QuizService {
-  questionCount: number = 0;
-  answerCount: number = 0;
-  selectedChoice!: Choice ;
-  quizzes: any;
-  isQuizzing: boolean = false;
-  quiz!: Quiz;　//クイズデータを入れる変数
-  correctAnswerRate: number = 0; //正答率を入れる変数
+  private _questionCount: number = 0;
+  private _answerCount: number = 0;
+  private _selectedChoice!: Choice ;
+  private _quizzes: any;
+  private _isQuizzing: boolean = false;
+  private _quiz!: Quiz;　//クイズデータを入れる変数
+  
 
 
   constructor(
@@ -26,31 +26,31 @@ export class QuizService {
   ) { }
 
   initQuiz(): void {
-    this.quizzes = null;
-    this.questionCount = 0;
-    this.answerCount = 0;
-    this.isQuizzing = false;
+    this._quizzes = null;
+    this._questionCount = 0;
+    this._answerCount = 0;
+    this._isQuizzing = false;
   }
 
   startQuiz(): void {
-    this.quizzes = _.sampleSize(QUIZ_DATA, QUIZ_COUNT);
-    this.questionCount = 1;
-    this.answerCount = 0;
-    this.isQuizzing = true;
+    this._quizzes = _.sampleSize(QUIZ_DATA, QUIZ_COUNT);
+    this._questionCount = 1;
+    this._answerCount = 0;
+    this._isQuizzing = true;
     this.router.navigate(['question']);
   }
 
   getQuiz(): Quiz {
-    this.quiz = this.quizzes[this.questionCount - 1]; //quizにクイズのデータを入れるを入れる
-    return this.quizzes[this.questionCount - 1];
+    this._quiz = this._quizzes[this.questionCount - 1]; //quizにクイズのデータを入れるを入れる
+    return this._quizzes[this.questionCount - 1];
     // return QUIZ_DATA[0];
   }
 
   checkAnswer(choice: Choice): void {
-    this.selectedChoice = choice;
-    if (choice.isAnswer) ++this.answerCount;
+    this._selectedChoice = choice;
+    if (choice.isAnswer) ++this._answerCount;
 
-    ++this.questionCount;
+    ++this._questionCount;
   }
 
 
@@ -63,11 +63,30 @@ export class QuizService {
   }
 
   // 正答率を計算する関数
-  findCorrectAnswerRate(): void{
-    this.correctAnswerRate = this.answerCount / (this.questionCount-1);
-    this.correctAnswerRate = this.correctAnswerRate * 100;
-    this.correctAnswerRate = Math.floor( this.correctAnswerRate ) ;
-    
+  findCorrectAnswerRate(): number{
+    let correctAnswerRate: number = 0; //正答率を入れる変数
+    const division = this.answerCount / (this.questionCount-1);
+    const multiplication = division * 100;
+    correctAnswerRate = Math.floor( multiplication ) ;
+    return correctAnswerRate;
+  }
+
+  get questionCount(): number{
+    return this._questionCount;
+  }
+  get answerCount(): number{
+    return this._answerCount;
+  }
+  get isQuizzing(): boolean{
+    return this._isQuizzing;
+  }
+
+  get quiz(): Quiz{
+    return this._quiz;
+  }
+
+  get selectedChoice(): Choice{
+    return this._selectedChoice;
   }
 
 }
