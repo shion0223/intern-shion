@@ -1,0 +1,17 @@
+@import '../../../styles/color';
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+}
+
+.contain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+    width: 325px;
+    color: $text;
+}

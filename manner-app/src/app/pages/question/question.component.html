@@ -1,1 +1,14 @@
-<p>question works!</p>
+<div class="outerSentence">
+    <h1 class="questionNumber">
+        <div>Q{{questionCount}}</div>
+    </h1> 
+    <div class="questionSentence">
+        <span *ngFor="let question of quizData.questions">{{question}}</span>
+    </div>
+</div>
+
+<div class="outerButton">
+    <div class="answerButton">
+        <button *ngFor="let choice of quizData.choices" mat-raised-button color = 'primary' (click)="chooseAnswer(choice)">{{choice.statement}}</button>
+    </div>
+</div>

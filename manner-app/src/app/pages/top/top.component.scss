@@ -1,4 +1,11 @@
+@import '../../../styles/color';
+
 .title{
-    color: #094067;
     text-align: center;
+    color: $text;
 }
+.outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

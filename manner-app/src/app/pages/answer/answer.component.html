@@ -1,0 +1,47 @@
+<div *ngIf='isAnswer; else Statement' class="answerIcon">
+
+    <div>
+        <h1>正解</h1>
+    </div>
+
+    <div>
+        <span class="circleLine"></span>
+    </div>
+
+</div>
+
+<ng-template #Statement>
+    <div class="answerIcon">
+        <div>
+            <h1>不正解</h1>
+        </div>
+
+        <div class="box">
+            <div class="incorrectAnswer"></div>
+        </div>
+    </div>
+</ng-template>
+
+<div class="center">
+
+    <div class="outerFrame">
+        <p>豆知識</p>
+    </div>
+
+    <div class="explanation">
+        {{explanation}}
+    </div>
+
+</div>
+
+<div class="outer">
+
+    <div class="nextButton">
+
+        <button  mat-raised-button color = "primary" (click)="resultPage()">終了</button>
+        <button  mat-raised-button color = "primary" (click)="nextPage()">次へ</button>
+        
+    </div>
+
+</div>
+    

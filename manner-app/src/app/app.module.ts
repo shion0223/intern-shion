@@ -7,8 +7,11 @@ import { TopComponent } from './pages/top/top.component';
 import { ButtonComponent } from './components/button/button.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import {MatButtonModule} from '@angular/material/button';
+import { AnswerComponent } from './pages/answer/answer.component';
+import { ResultComponent } from './pages/result/result.component';
 
 
 @NgModule({
@@ -16,13 +19,16 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     TopComponent,
     ButtonComponent,
-    QuestionComponent
+    QuestionComponent,
+    AnswerComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
