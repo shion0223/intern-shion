@@ -6,7 +6,7 @@ import * as _ from 'lodash-es'; // https://www.npmjs.com/package/lodash-es
 
 
 
-const QUIZ_COUNT = 2;
+const QUIZ_COUNT = 3;
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,8 @@ export class QuizService {
   selectedChoice!: Choice ;
   quizzes: any;
   isQuizzing: boolean = false;
-  quiz!: Quiz;
+  quiz!: Quiz;　//クイズデータを入れる変数
+  correctAnswerRate: number = 0; //正答率を入れる変数
 
 
   constructor(
@@ -40,7 +41,7 @@ export class QuizService {
   }
 
   getQuiz(): Quiz {
-    this.quiz = this.quizzes[this.questionCount - 1]; //quizにクイズのデータを入れる
+    this.quiz = this.quizzes[this.questionCount - 1]; //quizにクイズのデータを入れるを入れる
     return this.quizzes[this.questionCount - 1];
     // return QUIZ_DATA[0];
   }
@@ -52,12 +53,21 @@ export class QuizService {
     ++this.questionCount;
   }
 
+
   nextPage(): void {
     if (this.questionCount <= QUIZ_COUNT) {
       this.router.navigate(['question']);
     } else {
       this.router.navigate(['result']);
     }
+  }
+
+  // 正答率を計算する関数
+  findCorrectAnswerRate(): void{
+    this.correctAnswerRate = this.answerCount / (this.questionCount-1);
+    this.correctAnswerRate = this.correctAnswerRate * 100;
+    this.correctAnswerRate = Math.floor( this.correctAnswerRate ) ;
+    
   }
 
 }
