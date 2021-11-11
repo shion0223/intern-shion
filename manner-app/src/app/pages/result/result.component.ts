@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core'
+import { QuizService } from 'src/app/services/quiz.service'
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public quizService:QuizService
+  ) { }
 
   ngOnInit(): void {
+    this.quizService.findCorrectAnswerRate(); //result画面が開かれた時にfindCorrectAnswerRate関数が実行される
   }
 
 }

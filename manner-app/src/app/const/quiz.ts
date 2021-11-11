@@ -17,19 +17,19 @@ export const QUIZ_DATA: Quiz[] = [
       ],
       choices: [
         {
-          statement: '選択肢1',
+          statement: 'その企業の就業時間前',
           isAnswer: false
         },
         {
-          statement: '選択肢2(答え)',
+          statement: 'その企業の就業時間中',
           isAnswer: true
         },
         {
-          statement: '選択肢3',
+          statement: 'その企業の就業時間後',
           isAnswer: false
         },
         {
-          statement: '選択肢4',
+          statement: 'お昼時',
           isAnswer: false
         }
       ],
