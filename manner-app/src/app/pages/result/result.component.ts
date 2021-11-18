@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { QuizService } from 'src/app/services/quiz.service'
+
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
@@ -20,5 +21,7 @@ export class ResultComponent implements OnInit {
     this.questionCount = this.quizService.questionCount
 
   }
+
+  
 
 }
