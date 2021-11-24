@@ -1,12 +1,12 @@
 <div class="result">
-    <div class="contain">
-        <h1>結果</h1>
-        <p>正答率</p>
-        <p>{{correctAnswerRate}}%</p>
-        <p>{{answerCount}} / {{questionCount-1}}</p>
-    </div>
+  <div class="contain">
+    <h1>結果</h1>
+    <p>正答率</p>
+    <p>{{correctAnswerRate}}%</p>
+    <p>{{answerCount}} / {{questionCount-1}}</p>
+  </div>
 </div>
 <div class="buttoncontain">
-    <button mat-raised-button color="primary" >復習</button>
-    <button mat-raised-button color="primary" routerLink="/">終了</button>
+  <app-button [text]="'復習'" ></app-button>
+  <app-button [text]="'終了'" routerLink="/"></app-button>
 </div>

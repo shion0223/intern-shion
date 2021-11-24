@@ -19,14 +19,14 @@ export class AnswerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.explanation = this.quizService.quiz.explanation 
+    this.explanation = this.quizService.quiz.explanation
     this.isAnswer= this.quizService.selectedChoice.isAnswer
   }
 
-  nextPage() {
+  nextPage(test:any) {
     this.quizService.nextPage()
   }
-  resultPage(){
+  resultPage(test:any){
     this.router.navigate(['result'])
   }
 

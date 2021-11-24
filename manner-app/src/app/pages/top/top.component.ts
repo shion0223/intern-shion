@@ -15,7 +15,8 @@ export class TopComponent implements OnInit {
   ngOnInit(): void {
     this.quizService.initQuiz();
   }
-  startQuiz() {
+  startQuiz(test?: string) {
+    console.log(test);
     this.quizService.startQuiz();
   }
 

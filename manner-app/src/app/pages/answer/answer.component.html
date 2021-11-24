@@ -38,10 +38,9 @@
 
     <div class="nextButton">
 
-        <button  mat-raised-button color = "primary" (click)="resultPage()">終了</button>
-        <button  mat-raised-button color = "primary" (click)="nextPage()">次へ</button>
-        
+      <app-button [text]="'終了'" (btnClick)="resultPage($event)"></app-button>
+      <app-button [text]="'次へ'" (btnClick)="nextPage($event)"></app-button>
+
     </div>
 
 </div>
-    
