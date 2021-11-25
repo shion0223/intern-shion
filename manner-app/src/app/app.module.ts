@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { AnswerComponent } from './pages/answer/answer.component';
 import { ResultComponent } from './pages/result/result.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ResultComponent } from './pages/result/result.component';
     ButtonComponent,
     QuestionComponent,
     AnswerComponent,
-    ResultComponent
+    ResultComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
