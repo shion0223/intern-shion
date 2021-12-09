@@ -6,28 +6,24 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-answer',
   templateUrl: './answer.component.html',
-  styleUrls: ['./answer.component.scss']
+  styleUrls: ['./answer.component.scss'],
 })
 export class AnswerComponent implements OnInit {
-
   explanation: string = '';
   isAnswer: boolean = false;
 
-  constructor(
-    public quizService:QuizService,
-    private router: Router
-  ) { }
+  constructor(public quizService: QuizService, private router: Router) {}
 
   ngOnInit(): void {
-    this.explanation = this.quizService.quiz.explanation
-    this.isAnswer= this.quizService.selectedChoice.isAnswer
+    this.explanation = this.quizService.quiz.explanation;
+    this.isAnswer = this.quizService.selectedChoice.isAnswer;
   }
 
-  nextPage(test:any) {
-    this.quizService.nextPage()
-  }
-  resultPage(test:any){
-    this.router.navigate(['result'])
+  nextPage(test: any) {
+    this.quizService.nextPage();
   }
 
+  resultPage(test: any) {
+    this.router.navigate(['result']);
+  }
 }

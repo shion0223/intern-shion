@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core'
-import { QuizService } from 'src/app/services/quiz.service'
+import { Component, OnInit } from '@angular/core';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+  styleUrls: ['./result.component.scss'],
 })
 export class ResultComponent implements OnInit {
   correctAnswerRate: number = 0;
   answerCount: number = 0;
   questionCount: number = 0;
 
-  constructor(
-    public quizService:QuizService
-  ) { }
+  constructor(public quizService: QuizService) {}
 
   ngOnInit(): void {
     this.correctAnswerRate = this.quizService.findCorrectAnswerRate(); //result画面が開かれた時にfindCorrectAnswerRate関数が実行される
-    this.answerCount = this.quizService.answerCount
-    this.questionCount = this.quizService.questionCount
-
+    this.answerCount = this.quizService.answerCount;
+    this.questionCount = this.quizService.questionCount;
+    this.quizService.saveIncorrectAnswers();
   }
 
-  
-
+  review(test: any) {
+    console.log('ここだよ');
+    console.log(this.quizService.makingProblem);
+    this.quizService.startReviewQuiz();
+  }
 }
