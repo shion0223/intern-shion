@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
 
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
@@ -11,7 +13,7 @@ export class ResultComponent implements OnInit {
   answerCount: number = 0;
   questionCount: number = 0;
 
-  constructor(public quizService: QuizService) {}
+  constructor(public quizService: QuizService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.correctAnswerRate = this.quizService.findCorrectAnswerRate(); //result画面が開かれた時にfindCorrectAnswerRate関数が実行される
@@ -23,6 +25,15 @@ export class ResultComponent implements OnInit {
   review(test: any) {
     console.log('ここだよ');
     console.log(this.quizService.makingProblem);
-    this.quizService.startReviewQuiz();
+    if (!this.quizService.makingProblem.length) {
+      const dialogData = {};
+      const dialogRef = this.dialog.open(DialogComponent, {
+        width: '60vw',
+        disableClose: true,
+      });
+      // dialogRef.afterClosed().subscribe(() => {});
+    } else {
+      this.quizService.startReviewQuiz();
+    }
   }
 }
