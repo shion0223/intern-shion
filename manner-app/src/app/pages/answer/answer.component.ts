@@ -17,9 +17,6 @@ export class AnswerComponent implements OnInit {
   ngOnInit(): void {
     this.explanation = this.quizService.quiz.explanation;
     this.isAnswer = this.quizService.selectedChoice.isAnswer;
-    if (this.isAnswer == false) {
-      this.quizService.setResult();
-    }
   }
 
   nextPage(test: any) {

@@ -23,6 +23,7 @@ export class QuestionComponent implements OnInit {
     const quizData = this.quizService.quiz;
     console.log(this.quizData);
     // this.quizData.choices = _.shuffle(this.quizData.choices); // render
+    console.log(quizData.choices);
     quizData.choices = _.shuffle(quizData.choices);
     this.quizData = quizData;
     this.questionCount = this.quizService.questionCount;
@@ -30,7 +31,7 @@ export class QuestionComponent implements OnInit {
 
   chooseAnswer(choice: Choice) {
     this.quizService.checkAnswer(choice);
-
+    this.quizService.addIncorrectAnswer();
     this.router.navigate(['answer']);
   }
 }

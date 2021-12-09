@@ -17,10 +17,12 @@ export class ResultComponent implements OnInit {
     this.correctAnswerRate = this.quizService.findCorrectAnswerRate(); //result画面が開かれた時にfindCorrectAnswerRate関数が実行される
     this.answerCount = this.quizService.answerCount;
     this.questionCount = this.quizService.questionCount;
+    this.quizService.saveIncorrectAnswers();
   }
 
   review(test: any) {
-    console.log('test');
+    console.log('ここだよ');
+    console.log(this.quizService.makingProblem);
     this.quizService.startReviewQuiz();
   }
 }

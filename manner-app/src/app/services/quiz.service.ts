@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Choice, Quiz, QUIZ_DATA } from '../const/quiz';
 import * as _ from 'lodash-es'; // https://www.npmjs.com/package/lodash-es
+import { NgLocaleLocalization } from '@angular/common';
 
 const QUIZ_COUNT = 3;
 
@@ -16,6 +17,7 @@ export class QuizService {
   private _quizzes!: Quiz[];
   private _isQuizzing: boolean = false;
   private _quiz!: Quiz; //クイズデータを入れる変数
+  public makingProblem!: Quiz[]; //間違えた問題を入れる配列
   constructor(private router: Router) {}
 
   initialize(): void {
@@ -23,6 +25,7 @@ export class QuizService {
     this._questionCount = 0;
     this._answerCount = 0;
     this._isQuizzing = false;
+    this.makingProblem = [];
   }
 
   start(): void {
@@ -30,6 +33,7 @@ export class QuizService {
     this._questionCount = 1;
     this._answerCount = 0;
     this._isQuizzing = true;
+    this.makingProblem = [];
   }
 
   getQuiz(): Quiz {
@@ -57,7 +61,7 @@ export class QuizService {
   }
 
   nextPage(): void {
-    if (this.questionCount <= QUIZ_COUNT) {
+    if (this.questionCount <= this._quizzes.length) {
       this.router.navigate(['question']);
     } else {
       this.router.navigate(['result']);
@@ -74,12 +78,17 @@ export class QuizService {
   }
 
   // 間違えた問題をローカルストレージに保存
-  setResult(): void {
-    console.log('setResultStart');
-    const storedResult = localStorage.getItem('making_problem');
-    const reviewProblem = this.quiz;
+  saveIncorrectAnswers(): void {
+    // makingProblemの変数名を変える
+    localStorage.setItem('making_problem', JSON.stringify(this.makingProblem));
+  }
 
-    localStorage.setItem('making_problem', JSON.stringify(reviewProblem));
+  addIncorrectAnswer(): void {
+    if (this.selectedChoice.isAnswer) {
+      return;
+    }
+    this.makingProblem.push(this.quiz);
+    console.log(this.makingProblem);
   }
 
   // 間違えた問題を出題
@@ -91,6 +100,7 @@ export class QuizService {
     this._answerCount = 0;
     this._isQuizzing = true;
     this.router.navigate(['question']);
+    this.makingProblem = [];
   }
 
   get questionCount(): number {
@@ -104,19 +114,19 @@ export class QuizService {
   }
 
   get quiz(): Quiz {
-    const storedQuiz = localStorage.getItem('quiz');
-    const quiz = {}; // 初期値
-    if (storedQuiz) {
-      quiz = JSON.parse(storedQuiz || '');
-    }
-    this._quiz = quiz;
+    // const storedQuiz = localStorage.getItem('quiz');
+    // const quiz = {}; // 初期値
+    // if (storedQuiz) {
+    //   quiz = JSON.parse(storedQuiz || '');
+    // }
+    // this._quiz = quiz;
     return this._quiz;
   }
 
-  set quiz(param): void {
-    localStorage.setItem('quiz', JSON.stringify(param));
-    this._quiz = param;
-  }
+  // set quiz(param): void {
+  //   localStorage.setItem('quiz', JSON.stringify(param));
+  //   this._quiz = param;
+  // }
 
   get selectedChoice(): Choice {
     return this._selectedChoice;
