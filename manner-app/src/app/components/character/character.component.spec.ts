@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowCharacterComponent } from './show-character.component';
+import { ShowCharacterComponent } from './character.component';
 
 describe('ShowCharacterComponent', () => {
   let component: ShowCharacterComponent;
@@ -8,9 +8,8 @@ describe('ShowCharacterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowCharacterComponent ]
-    })
-    .compileComponents();
+      declarations: [ShowCharacterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

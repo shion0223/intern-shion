@@ -1,11 +1,11 @@
-@import '../../../styles/color';
+@import "../../../styles/color";
 
-.title{
-    text-align: center;
-    color: $text;
+.title {
+  text-align: center;
+  color: $text;
 }
-.outer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
