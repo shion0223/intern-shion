@@ -52,11 +52,7 @@ export class QuizService {
     this._selectedChoice = choice;
     if (choice.isAnswer) {
       ++this._answerCount;
-    } else {
-      // 不正解だった場合の処理
-      // this.setResult();
     }
-
     ++this._questionCount;
   }
 
