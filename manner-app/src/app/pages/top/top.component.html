@@ -3,10 +3,13 @@
     <div>就活マナー</div>
 </h1>
 
-<!-- <app-button></app-button> -->
+<!-- シンソツ君の表示 -->
+<app-show-character></app-show-character>
+
+
 <div class="outer">
     <app-button [text]="'始める'" (btnClick)="startQuiz($event)"></app-button>
-    <button (click)="startQuiz()" mat-raised-button color="primary">始める</button>
+    <!-- <button (click)="startQuiz()" mat-raised-button color="primary">始める</button> -->
 </div>
 
 
