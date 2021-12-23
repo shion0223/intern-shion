@@ -15,7 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AnswerComponent } from './pages/answer/answer.component';
 import { ResultComponent } from './pages/result/result.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { ShowCharacterComponent } from './components/character/character.component';
+import { CharacterComponent } from './components/character/character.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { ShowCharacterComponent } from './components/character/character.compone
     AnswerComponent,
     ResultComponent,
     DialogComponent,
-    ShowCharacterComponent,
+    CharacterComponent,
   ],
   imports: [
     BrowserModule,
