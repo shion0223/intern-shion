@@ -10,16 +10,19 @@ import * as _ from 'lodash-es'; // https://www.npmjs.com/package/lodash-es
   styleUrls: ['./top.component.scss'],
 })
 export class TopComponent implements OnInit {
-  public comments!: Comments[];
   public comment!: string;
 
   constructor(public quizService: QuizService, private router: Router) {}
 
   ngOnInit(): void {
     this.quizService.initialize();
-    this.comments = _.sampleSize(TOP_COMMENT_DATA);
-    this.comment = this.comments[0].comment;
-    console.log(this.comment);
+    // const comments = _.sampleSize(TOP_COMMENT_DATA);
+    //_.sampleSizeは複数の値をランダムに取り出す場合に使う
+    //値を１つだけランダムに取得する場合はMath.randomのほうがいい
+    this.comment =
+      TOP_COMMENT_DATA[
+        Math.floor(Math.random() * TOP_COMMENT_DATA.length)
+      ].comment;
   }
 
   startQuiz() {

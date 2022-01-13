@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import * as _ from 'lodash-es'; // https://www.npmjs.com/package/lodash-es
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-character',
@@ -8,7 +7,6 @@ import * as _ from 'lodash-es'; // https://www.npmjs.com/package/lodash-es
 })
 export class CharacterComponent implements OnInit {
   @Input() text?: string;
-  @Output() btnClick = new EventEmitter<any>();
 
   constructor() {}
 
