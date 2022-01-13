@@ -17,13 +17,9 @@ export class QuestionComponent implements OnInit {
   constructor(private router: Router, public quizService: QuizService) {}
 
   ngOnInit(): void {
-    // this.quizData = this.quizService.getQuiz();
     this.quizService.setCurrentQuiz();
-    // this.quizData = this.quizService.quiz;  // render
+
     const quizData = this.quizService.quiz;
-    console.log(this.quizData);
-    // this.quizData.choices = _.shuffle(this.quizData.choices); // render
-    console.log(quizData.choices);
     quizData.choices = _.shuffle(quizData.choices);
     this.quizData = quizData;
     this.questionCount = this.quizService.questionCount;

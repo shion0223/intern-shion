@@ -40,21 +40,16 @@ export class QuizService {
     const quiz = this._quizzes[this.questionCount - 1];
     this._quiz = quiz; //quizにクイズのデータを入れる
     return quiz;
-    // return QUIZ_DATA[0];
   }
 
   setCurrentQuiz(): void {
     this._quiz = this._quizzes[this.questionCount - 1]; //quizにクイズのデータを入れる
-    // return QUIZ_DATA[0];
   }
 
   checkAnswer(choice: Choice): void {
     this._selectedChoice = choice;
     if (choice.isAnswer) {
       ++this._answerCount;
-    } else {
-      // 不正解だった場合の処理
-      // this.setResult();
     }
 
     ++this._questionCount;
@@ -114,19 +109,8 @@ export class QuizService {
   }
 
   get quiz(): Quiz {
-    // const storedQuiz = localStorage.getItem('quiz');
-    // const quiz = {}; // 初期値
-    // if (storedQuiz) {
-    //   quiz = JSON.parse(storedQuiz || '');
-    // }
-    // this._quiz = quiz;
     return this._quiz;
   }
-
-  // set quiz(param): void {
-  //   localStorage.setItem('quiz', JSON.stringify(param));
-  //   this._quiz = param;
-  // }
 
   get selectedChoice(): Choice {
     return this._selectedChoice;

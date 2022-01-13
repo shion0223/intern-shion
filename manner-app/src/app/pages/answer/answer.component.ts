@@ -19,11 +19,11 @@ export class AnswerComponent implements OnInit {
     this.isAnswer = this.quizService.selectedChoice.isAnswer;
   }
 
-  nextPage(test: any) {
+  nextPage() {
     this.quizService.nextPage();
   }
 
-  resultPage(test: any) {
+  resultPage() {
     this.router.navigate(['result']);
   }
 }
