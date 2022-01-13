@@ -6,6 +6,9 @@
     <p>{{answerCount}} / {{questionCount-1}}</p>
   </div>
 </div>
+<div>
+  <app-character [text]="comment"></app-character>
+</div>
 <div class="buttoncontain">
   <app-button [text]="'復習'" (btnClick)="review($event)"></app-button>
   <app-button [text]="'終了'" routerLink="/"></app-button>

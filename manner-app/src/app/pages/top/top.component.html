@@ -4,11 +4,11 @@
 </h1>
 
 <!-- シンソツ君の表示 -->
-<app-character></app-character>
+<app-character [text]="comment"></app-character>
 
 
 <div class="container actions">
-    <app-button [text]="'始める'" (btnClick)="startQuiz($event)"></app-button>
+    <app-button [text]="'始める'" (btnClick)="startQuiz()"></app-button>
 </div>
 
 
