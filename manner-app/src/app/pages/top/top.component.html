@@ -2,9 +2,13 @@
     <div>第二新卒が送る</div>
     <div>就活マナー</div>
 </h1>
- 
-<!-- <app-button></app-button> -->
-<div class="outer">
-    <button mat-raised-button color = 'primary' (click)="startQuiz()">始める</button>
+
+<!-- シンソツ君の表示 -->
+<app-character></app-character>
+
+
+<div class="container actions">
+    <app-button [text]="'始める'" (btnClick)="startQuiz($event)"></app-button>
 </div>
-<!-- <button (click)="startQuiz()">始める</button> -->
+
+

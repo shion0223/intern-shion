@@ -9,10 +9,13 @@ import { QuestionComponent } from './pages/question/question.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { AnswerComponent } from './pages/answer/answer.component';
 import { ResultComponent } from './pages/result/result.component';
-
+import { DialogComponent } from './components/dialog/dialog.component';
+import { CharacterComponent } from './components/character/character.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +24,19 @@ import { ResultComponent } from './pages/result/result.component';
     ButtonComponent,
     QuestionComponent,
     AnswerComponent,
-    ResultComponent
+    ResultComponent,
+    DialogComponent,
+    CharacterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
