@@ -7,6 +7,7 @@ export interface Quiz {
   questions: string[];
   choices: Choice[];
   explanation: string;
+  comment: string;
 }
 
 export const QUIZ_DATA: Quiz[] = [
@@ -32,6 +33,7 @@ export const QUIZ_DATA: Quiz[] = [
     ],
     explanation:
       '返信する時間帯は、応募企業の就業時間内に送信するのがベター。在職中に転職活動をしていたり、就活中でも授業があるなど「平日の日中にはなかなか返信できない」という人もいるかもしれませんが、あまり遅い時間にメールを送ると好ましく思わない採用担当者がいたり、「生活リズムが不規則な人なのだろうか」と、いらぬ憶測を呼び兼ねません。メールの確認が深夜になってしまった場合は時間を指定して送信する「予約機能」などを使って、翌日の午前中に返信すると良いでしょう。',
+    comment: '僕はメールでやりとりしたことないけどね！',
   },
   {
     questions: ['面接室に入室する際', '正しいノックの仕方はどれでしょう?'],
@@ -54,6 +56,7 @@ export const QUIZ_DATA: Quiz[] = [
       },
     ],
     explanation: '説明文2',
+    comment: '入室時のノックは色々な場面で使うから覚えておいたほうがいいね！',
   },
   {
     questions: ['面接会場に到着する時間は何分前が良いでしょう'],
@@ -76,5 +79,6 @@ export const QUIZ_DATA: Quiz[] = [
       },
     ],
     explanation: '説明文3',
+    comment: '早ければいいわけじゃないんだね',
   },
 ];
