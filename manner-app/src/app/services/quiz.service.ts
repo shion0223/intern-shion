@@ -18,6 +18,9 @@ export class QuizService {
   private _isQuizzing: boolean = false;
   private _quiz!: Quiz; //クイズデータを入れる変数
   public makingProblem!: Quiz[]; //間違えた問題を入れる配列
+  public questionCountData: number[] = new Array(); //解いた問題数を入れる配列
+  public inCorrectAnswerCountData: number[] = new Array(); //正解数を入れる配列
+  public dateData: string[] = new Array(); //問題を解いた日の日付を入れる配列
   constructor(private router: Router) {}
 
   initialize(): void {
@@ -97,6 +100,48 @@ export class QuizService {
     this._isQuizzing = true;
     this.router.navigate(['question']);
     this.makingProblem = [];
+  }
+
+  getNowMD() {
+    var dt = new Date();
+    var m = ('00' + (dt.getMonth() + 1)).slice(-2);
+    var d = ('00' + dt.getDate()).slice(-2);
+    var nowDate = m + '-' + d;
+    return nowDate;
+  }
+
+  // 解いた問題の数と正解数と日付をローカルストレージに保存
+  setGraphData() {
+    console.log(this.answerCount);
+
+    this.dateData.push(this.getNowMD());
+    this.questionCountData.push(this.questionCount - 1);
+    this.inCorrectAnswerCountData.push(this.answerCount);
+
+    localStorage.setItem('dateData', JSON.stringify(this.dateData));
+
+    localStorage.setItem(
+      'questionCountData',
+      JSON.stringify(this.questionCountData)
+    );
+
+    localStorage.setItem(
+      'inCorrectAnswerCountData',
+      JSON.stringify(this.inCorrectAnswerCountData)
+    );
+  }
+
+  //解いた問題の数と正解数と日付をローカルストレージから取得
+  getGraphData() {
+    const dateData = localStorage.getItem('dateData') ?? '';
+    this.dateData = JSON.parse(dateData);
+
+    const questionCountData = localStorage.getItem('questionCountData') ?? '';
+    this.questionCountData = JSON.parse(questionCountData);
+
+    const inCorrectAnswerCountData =
+      localStorage.getItem('inCorrectAnswerCountData') ?? '';
+    this.inCorrectAnswerCountData = JSON.parse(inCorrectAnswerCountData);
   }
 
   get questionCount(): number {

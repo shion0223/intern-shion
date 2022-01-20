@@ -8,6 +8,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { NgChartsModule } from 'ng2-charts';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -35,6 +36,7 @@ import { CharacterComponent } from './components/character/character.component';
     MatButtonModule,
     FormsModule,
     MatDialogModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

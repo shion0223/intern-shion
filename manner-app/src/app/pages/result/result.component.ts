@@ -35,6 +35,13 @@ export class ResultComponent implements OnInit {
         break;
       }
     }
+
+    if (
+      this.quizService.getNowMD() !=
+      this.quizService.dateData[this.quizService.dateData.length - 1]
+    ) {
+      this.quizService.setGraphData();
+    }
   }
 
   review(test: any) {
